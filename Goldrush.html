@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app="GoldDigger">
+  <head>
+    <meta charset="utf-8">
+    <title>Gold Rush</title>
+    <link rel="stylesheet" href="Goldrush.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular.js"></script>
+  </head>
+  <body ng-controller="GoldDiggerController as Gold">
+
+    <img ng-click="Gold.getCoordinates()" class="Map" src="https://github.com/RefactorU/exercise-starters/blob/master/client-js/gold-rush/topo-co.jpg?raw=true"/>
+
+    <img ng-click="Gold.removePin(index)" ng-repeat="(index, obj) in Gold.pinsArray" style="top:{{obj.Y}}px; left:{{obj.X}}px" class="dropPin" src="http://www.clker.com/cliparts/W/x/V/N/a/o/orange-pin-hi.png">
+
+    <script type="text/javascript" src="Goldrush.js"></script>
+  </body>
+</html>
