@@ -8,16 +8,16 @@
   </head>
   <body ng-controller="GoldDiggerController as Gold">
 <!-- This is the MAP image -->
-    <img ng-click="Gold.getCoordinates()" class="Map" src="https://github.com/RefactorU/exercise-starters/blob/master/client-js/gold-rush/topo-co.jpg?raw=true"/>
+    <img class="Map" ng-click="Gold.getCoordinates()" src="https://github.com/RefactorU/exercise-starters/blob/master/client-js/gold-rush/topo-co.jpg?raw=true"/>
 <!-- This is the Drop Pin image -->
-    <img ng-click="Gold.removePin(index)" ng-repeat="(index, obj) in Gold.pinsArray" ng-Mouseover="Gold.hover(index)" ng-Mouseleave="Gold.hoverLeave(index)" style="top:{{obj.Y}}px; left:{{obj.X}}px" class="dropPin" src="http://www.clker.com/cliparts/W/x/V/N/a/o/orange-pin-hi.png">
+    <img ng-click="Gold.removePin(index)" ng-repeat="(index, obj) in Gold.pinsArray" ng-Mouseover="Gold.hover(index)" ng-Mouseleave="Gold.hoverLeave(index)" style="{{obj.cssMaker()}}" class="dropPin" src="http://www.clker.com/cliparts/W/x/V/N/a/o/orange-pin-hi.png">
 <!-- This is the note input/box and button -->
-    <div ng-repeat="(index, obj) in Gold.pinsArray" ng-show="Gold.pinsArray[index].visible" class="blurbNote" style="top:{{obj.Y+50}}px; left:{{obj.X-50}}px">
+    <div ng-repeat="(index, obj) in Gold.pinsArray" ng-show="Gold.pinsArray[index].visible" class="blurbNote" style="{{obj.cssMaker()}}">
       <input ng-model="Gold.noteInput" type="text">
       <button type="button" ng-click="Gold.submitClick(index)" name="button">Submit</button>
     </div>
 <!-- Our Read Only Display note. -->
-  <div class="readOnlyNote" ng-show="Gold.pinsArray[index].readNoteVisible" ng-bind="Gold.pinsArray[index].note" ng-repeat="(index, obj) in Gold.pinsArray" style="top:{{obj.Y+50}}px; left:{{obj.X-50}}px"></div>
+  <div class="readOnlyNote" ng-show="Gold.pinsArray[index].readNoteVisible" ng-bind="Gold.pinsArray[index].note" ng-repeat="(index, obj) in Gold.pinsArray" style="{{obj.cssMaker()}}"></div>
     <script type="text/javascript" src="Goldrush.js"></script>
   </body>
 </html>
